@@ -11,7 +11,7 @@ const cors = require("cors");
 app.use(cors({
     origin: [
         "http://localhost:3000",
-        "https://your-app.vercel.app"
+        "https://task-flow-frontend-asq6b3d6y-code-with-bharats-projects.vercel.app/"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
