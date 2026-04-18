@@ -8,14 +8,25 @@ const nodemailer = require("nodemailer");
 //Enable CORS
 const cors = require("cors");
 
+const allowedOrigins = [
+    "http://localhost:3000",
+    "https://task-flow-frontend-alpha.vercel.app"
+];
+
 app.use(cors({
-    origin: [
-        "http://localhost:3000",
-        "https://task-flow-frontend-asq6b3d6y-code-with-bharats-projects.vercel.app"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("CORS not allowed"));
+        }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
 }));
+
+app.options("*", cors());
 
 //Middleware to parse JSON bodies
 app.use(express.json());
