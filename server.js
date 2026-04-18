@@ -6,13 +6,14 @@ const app = express();
 const nodemailer = require("nodemailer");
 
 //Enable CORS
-const cors = require('cors');
+const cors = require("cors");
+
 app.use(cors({
     origin: [
         "http://localhost:3000",
-        "http://localhost:3001",
         "https://your-app.vercel.app"
     ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
 //Middleware to parse JSON bodies
