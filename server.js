@@ -8,6 +8,8 @@ const nodemailer = require("nodemailer");
 //Enable CORS
 const cors = require("cors");
 
+const cors = require("cors");
+
 app.use(cors({
     origin: [
         "http://localhost:3000",
@@ -16,6 +18,7 @@ app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
+
 //Middleware to parse JSON bodies
 app.use(express.json());
 
