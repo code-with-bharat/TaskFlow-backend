@@ -9,7 +9,6 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 
 const allowedOrigins = [
-    "http://localhost:3000",
     "https://task-flow-frontend-alpha.vercel.app"
 ];
 
