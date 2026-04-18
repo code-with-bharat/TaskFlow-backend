@@ -8,7 +8,7 @@ const nodemailer = require("nodemailer");
 //Enable CORS
 const cors = require('cors');
 app.use(cors(
-    { origin: "https://your-frontend-url.vercel.app" }
+    { origin: "https://localhost:3000" }
 ));
 //Middleware to parse JSON bodies
 app.use(express.json());
